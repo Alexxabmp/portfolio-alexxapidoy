@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 260 20% 6%;
+    --foreground: 260 20% 95%;
+
+    --card: 260 20% 10%;
+    --card-foreground: 260 20% 95%;
+
+    --popover: 260 20% 10%;
+    --popover-foreground: 260 20% 95%;
+
+    --primary: 270 80% 65%;
+    --primary-foreground: 260 20% 98%;
+
+    --secondary: 260 30% 15%;
+    --secondary-foreground: 260 20% 90%;
+
+    --muted: 260 20% 14%;
+    --muted-foreground: 260 15% 55%;
+
+    --accent: 280 90% 70%;
+    --accent-foreground: 260 20% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 260 20% 18%;
+    --input: 260 20% 18%;
+    --ring: 270 80% 65%;
+
+    --radius: 0.75rem;
+
+    --glow-primary: 270 80% 65%;
+    --glow-accent: 280 90% 70%;
+
+    --font-display: 'Space Grotesk', sans-serif;
+    --font-body: 'Inter', sans-serif;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    background-color: hsl(260 20% 6%);
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+  }
+  .font-body {
+    font-family: var(--font-body);
+  }
+  .text-glow {
+    text-shadow: 0 0 40px hsl(var(--glow-primary) / 0.5), 0 0 80px hsl(var(--glow-primary) / 0.2);
+  }
+  .box-glow {
+    box-shadow: 0 0 30px hsl(var(--glow-primary) / 0.3), 0 0 60px hsl(var(--glow-primary) / 0.1);
+  }
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+  }
+  .glass {
+    @apply backdrop-blur-xl border border-border;
+    background: hsl(var(--card) / 0.6);
+  }
+
+}
